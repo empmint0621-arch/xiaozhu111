@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp, ChevronDown, Lightbulb, Link2, Bookmark, BookOpen, Map, Sparkles } from 'lucide-react';
-import { cn } from '../../lib/utils';
 import type { RelatedArticle, CollectionLink } from '../../data/types';
 
 interface ReadingAssistantProps {

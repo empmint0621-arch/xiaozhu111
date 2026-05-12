@@ -73,10 +73,10 @@ export function TopicSwitcher({ domain, topics, selectedTopic, onTopicChange }: 
                 }`}
                 style={{ 
                   background: `linear-gradient(135deg, ${domain.gradient[0]}40, ${domain.gradient[1]}40)`,
-                  ringColor: isSelected ? domain.color : 'transparent',
-                }}
+                  '--tw-ring-color': isSelected ? domain.color : 'transparent',
+                } as React.CSSProperties}
               >
-                <IconComponent size={20} style={{ color: domain.color }} />
+                <IconComponent size={20} className="text-gray-700" />
               </div>
               <div className="flex-1 text-left">
                 <p className={`font-medium text-sm ${isSelected ? 'text-gray-800' : 'text-gray-600'}`}>

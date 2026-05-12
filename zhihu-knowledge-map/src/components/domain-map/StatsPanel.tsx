@@ -1,4 +1,4 @@
-import { User, BookOpen, CheckCircle, Clock, Bookmark, AlertCircle } from 'lucide-react';
+import { BookOpen, CheckCircle, AlertCircle } from 'lucide-react';
 import type { UserData, ReadingStats } from '../../data/types';
 
 interface StatsPanelProps {

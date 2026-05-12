@@ -1,4 +1,4 @@
-import type { UserData, ReadingStats, Domain, Topic, Article, RelatedArticle, CollectionLink } from './types';
+import type { UserData, ReadingStats, Domain, Topic, RelatedArticle, CollectionLink } from './types';
 
 // 用户数据
 export const mockUserData: UserData = {

@@ -88,7 +88,6 @@ export function MountainGraph({ domains, onDomainClick }: MountainGraphProps) {
         {/* Domain nodes */}
         {domains.map((domain, index) => {
           const IconComponent = iconMap[domain.icon] || Brain;
-          const size = Math.max(80, Math.min(120, domain.articleCount / 5));
           
           return (
             <motion.div

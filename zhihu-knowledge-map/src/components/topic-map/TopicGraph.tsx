@@ -72,8 +72,6 @@ export function TopicGraph({ domain, topics, selectedTopic, onTopicSelect }: Top
           const nextIndex = (index + 1) % topics.length;
           const pos1 = getTopicPosition(index, topics.length);
           const pos2 = getTopicPosition(nextIndex, topics.length);
-          const midX = (pos1.x + pos2.x) / 2;
-          const midY = (pos1.y + pos2.y) / 2;
           
           return (
             <motion.path
@@ -136,13 +134,13 @@ export function TopicGraph({ domain, topics, selectedTopic, onTopicSelect }: Top
             <motion.div
               whileHover={{ scale: 1.1 }}
               className={`relative w-16 h-16 rounded-2xl flex flex-col items-center justify-center shadow-lg transition-all ${
-                isSelected ? 'ring-4 ring-offset-2' : ''
+                isSelected ? `ring-4 ring-offset-2` : ''
               }`}
               style={{ 
                 background: `linear-gradient(135deg, ${domain.gradient[0]}80, ${domain.gradient[1]}80)`,
                 backdropFilter: 'blur(10px)',
-                ringColor: isSelected ? domain.color : 'transparent',
-              }}
+                '--tw-ring-color': isSelected ? domain.color : 'transparent',
+              } as React.CSSProperties}
             >
               <IconComponent size={24} className="text-white mb-1" />
             </motion.div>
@@ -163,7 +161,7 @@ export function TopicGraph({ domain, topics, selectedTopic, onTopicSelect }: Top
                 className="absolute top-full left-1/2 -translate-x-1/2 mt-16 w-48 bg-white rounded-xl shadow-lg border border-gray-100 p-3 z-20"
               >
                 <p className="text-xs text-gray-400 mb-2">+更多</p>
-                {topic.articles.slice(0, 2).map((article, idx) => (
+                {topic.articles.slice(0, 2).map((article) => (
                   <div key={article.id} className="flex items-start gap-2 mb-2 last:mb-0">
                     <span className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${
                       article.status === 'read' ? 'bg-blue-500' :
